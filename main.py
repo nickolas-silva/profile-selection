@@ -74,7 +74,7 @@ if opcao == "1":
 
 elif opcao == "2":
     print('Lendo arquivo de input... \n')
-    list_perfis = profile_selector.Profile_Selector.read_profiles('input.txt')
+    list_perfis = profile_selector.Profile_Selector.read_profiles('db/input.txt')
 
     print('O melhor perfil selecionado foi: ')
     mp = ps.selecionar_melhor_perfil(list_perfis)
