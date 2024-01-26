@@ -22,7 +22,7 @@ class Profile_Selector:
         with open(file_name, 'r') as file:
             linhas = file.readlines()
 
-            for i in range(0, len(linhas), 6):
+            for i in range(0, len(linhas), 7):
                 nome = linhas[i].strip()
                 corda = linhas[i + 1].strip()
                 espessura = linhas[i + 2].strip()
@@ -31,7 +31,7 @@ class Profile_Selector:
                 coeficiente_drag = linhas[i + 5].strip()
 
                 # Cria um objeto Profile e adiciona à lista
-                perfil = profile.Profile(nome, corda, espessura, angulo_ataque, coeficiente_lift, coeficiente_drag)
+                perfil = profile.Profile(nome, float(corda), float(espessura), float(angulo_ataque), float(coeficiente_lift), float(coeficiente_drag))
                 lista_perfis.append(perfil)
 
         Profile_Selector.l_profiles = lista_perfis
@@ -49,11 +49,11 @@ class Profile_Selector:
 
         # Inicializa o melhor perfil como o primeiro da lista
         melhor_perfil = perfis[0]
-        melhor_pontuacao = self.pontuacao_desempenho()
+        melhor_pontuacao = perfis[0].coeficiente_lift / perfis[0].coeficiente_drag
 
         # Itera sobre os perfis para encontrar o melhor
         for perfil in perfis[1:]:
-            pontuacao_atual = self.pontuacao_desempenho()
+            pontuacao_atual = perfil.coeficiente_lift / perfil.coeficiente_drag
             if pontuacao_atual > melhor_pontuacao:
                 melhor_perfil = perfil
                 melhor_pontuacao = pontuacao_atual

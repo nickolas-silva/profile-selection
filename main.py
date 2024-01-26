@@ -45,17 +45,17 @@ if opcao == "1":
 
         list_perfis.append(p)
 
-    ps.add_list(list_perfis)
-
-    ps.print_list()
+    print('O melhor perfil selecionado foi: ')
+    ps.selecionar_melhor_perfil(list_perfis).info()
 
 
 elif opcao == "2":
     print('Lendo arquivo de input...')
     list_perfis = profile_selector.Profile_Selector.read_profiles('input.txt')
-    print(list_perfis[1].info())
+    print(list_perfis[3].info())
 
-
+    print('O melhor perfil selecionado foi: ')
+    ps.selecionar_melhor_perfil(list_perfis).info()
         
-
-
+else:
+    print("Opção inválida!")
