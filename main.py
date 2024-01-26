@@ -46,16 +46,65 @@ if opcao == "1":
         list_perfis.append(p)
 
     print('O melhor perfil selecionado foi: ')
-    ps.selecionar_melhor_perfil(list_perfis).info()
+    mp = ps.selecionar_melhor_perfil(list_perfis)
+    mp.info()
+    with open('db/output.txt', 'w') as file:
+        file.write(f'Nome: {mp.nome}\n')
+        file.write(f'Corda: {mp.corda}\n')
+        file.write(f'Espessura: {mp.espessura}\n')
+        file.write(f'Ângulo de Ataque: {mp.angulo_ataque}\n')
+        file.write(f'Coeficiente de Lift: {mp.coeficiente_lift}\n')
+        file.write(f'Coeficiente de Drag: {mp.coeficiente_drag}\n')
+        file.write(f'Pontuação: {mp.coeficiente_lift / mp.coeficiente_drag}\n')
+
+        file.write(f'\n\nOutros perfis da lista: \n')
+        for perfil in list_perfis:
+            if(perfil.nome == mp.nome):
+                continue
+            else:
+                file.write(f'Nome: {perfil.nome}\n')
+                file.write(f'Corda: {perfil.corda}\n')
+                file.write(f'Espessura: {perfil.espessura}\n')
+                file.write(f'Ângulo de Ataque: {perfil.angulo_ataque}\n')
+                file.write(f'Coeficiente de Lift: {perfil.coeficiente_lift}\n')
+                file.write(f'Coeficiente de Drag: {perfil.coeficiente_drag}\n')
+                file.write(f'Pontuação: {perfil.coeficiente_lift / perfil.coeficiente_drag}\n')
+                file.write(f'\n')
 
 
 elif opcao == "2":
-    print('Lendo arquivo de input...')
+    print('Lendo arquivo de input... \n')
     list_perfis = profile_selector.Profile_Selector.read_profiles('input.txt')
-    print(list_perfis[3].info())
 
     print('O melhor perfil selecionado foi: ')
-    ps.selecionar_melhor_perfil(list_perfis).info()
+    mp = ps.selecionar_melhor_perfil(list_perfis)
+    mp.info()
+    with open('db/output.txt', 'w') as file:
+        file.write(f'O melhor perfil selecionado foi: \n')
+        file.write(f'Nome: {mp.nome}\n')
+        file.write(f'Corda: {mp.corda}\n')
+        file.write(f'Espessura: {mp.espessura}\n')
+        file.write(f'Ângulo de Ataque: {mp.angulo_ataque}\n')
+        file.write(f'Coeficiente de Lift: {mp.coeficiente_lift}\n')
+        file.write(f'Coeficiente de Drag: {mp.coeficiente_drag}\n')
+        file.write(f'Pontuação: {mp.coeficiente_lift / mp.coeficiente_drag}\n')
+
+        file.write(f'\n\nOutros perfis da lista: \n')
+        for perfil in list_perfis:
+            if(perfil.nome == mp.nome):
+                continue
+            else:
+                file.write(f'Nome: {perfil.nome}\n')
+                file.write(f'Corda: {perfil.corda}\n')
+                file.write(f'Espessura: {perfil.espessura}\n')
+                file.write(f'Ângulo de Ataque: {perfil.angulo_ataque}\n')
+                file.write(f'Coeficiente de Lift: {perfil.coeficiente_lift}\n')
+                file.write(f'Coeficiente de Drag: {perfil.coeficiente_drag}\n')
+                file.write(f'Pontuação: {perfil.coeficiente_lift / perfil.coeficiente_drag}\n')
+                file.write(f'\n')
+        
+
+        
         
 else:
     print("Opção inválida!")

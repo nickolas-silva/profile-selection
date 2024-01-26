@@ -1,1 +1,35 @@
-teste
+O melhor perfil selecionado foi: 
+Nome: Teste1
+Corda: 1.0
+Espessura: 0.12
+Ângulo de Ataque: 5.0
+Coeficiente de Lift: 1.2
+Coeficiente de Drag: 0.05
+Pontuação: 23.999999999999996
+
+
+Outros perfis da lista: 
+Nome: Teste2
+Corda: 1.1
+Espessura: 0.15
+Ângulo de Ataque: 5.3
+Coeficiente de Lift: 1.7
+Coeficiente de Drag: 0.15
+Pontuação: 11.333333333333334
+
+Nome: Teste3
+Corda: 1.1
+Espessura: 0.15
+Ângulo de Ataque: 5.3
+Coeficiente de Lift: 1.7
+Coeficiente de Drag: 0.15
+Pontuação: 11.333333333333334
+
+Nome: Teste4
+Corda: 1.1
+Espessura: 0.15
+Ângulo de Ataque: 5.3
+Coeficiente de Lift: 1.7
+Coeficiente de Drag: 0.15
+Pontuação: 11.333333333333334
+
